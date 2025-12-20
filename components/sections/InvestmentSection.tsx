@@ -1,105 +1,136 @@
 import React from 'react'
-import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 
 export const InvestmentSection: React.FC = () => {
-  const valueItems = [
-    { item: '8-Module Pantry of Plenty Curriculum', value: '$297' },
-    { item: 'Weekly Livestream Cooking Classes (8 weeks)', value: '$240' },
-    { item: 'Weekly Q&A Sessions (8 weeks)', value: '$160' },
-    { item: 'Weekly Cooking Demos (8 weeks)', value: '$80' },
-    { item: 'The Essential Canning Cookbook (Signed)', value: '$25' },
-    { item: '3 Months in the Sovereign Kitchen Society', value: '$97' },
-  ]
-
-  const totalValue = 899
-  const yourPrice = 197
-
-  const handleCTA = () => {
-    // TODO: Implement enrollment logic
-    console.log('Join Pantry of Plenty clicked')
+  const handleEnrollment = () => {
+    // TODO: Implement actual enrollment logic
+    console.log('Enrollment button clicked!')
   }
 
+  const includedItems = [
+    { name: '8-Module Pantry of Plenty Curriculum', value: 297 },
+    { name: 'Weekly Livestream Cooking Classes', value: 240 },
+    { name: 'Weekly Q&A Sessions', value: 160 },
+    { name: 'Weekly Cooking Demos', value: 80 },
+    { name: 'The Essential Canning Cookbook (Signed)', value: 25 },
+    { name: '3 Months in Sovereign Kitchen Society', value: 97 },
+  ]
+
+  const totalValue = includedItems.reduce((sum, item) => sum + item.value, 0)
+
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <Container>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            Your Investment
-          </h2>
-          <p className="text-lg md:text-xl text-gray-700 mb-12 text-center">
-            Let's put this in perspective:
-          </p>
-
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-            <table className="w-full">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="px-6 py-4 text-left text-lg font-semibold text-gray-900">
-                    What You're Getting
-                  </th>
-                  <th className="px-6 py-4 text-right text-lg font-semibold text-gray-900">
-                    Value
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {valueItems.map((item, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 text-lg text-gray-700">
-                      {item.item}
-                    </td>
-                    <td className="px-6 py-4 text-right text-lg font-semibold text-gray-900">
-                      {item.value}
-                    </td>
-                  </tr>
-                ))}
-                <tr className="bg-gray-900 text-white">
-                  <td className="px-6 py-4 text-lg font-bold">
-                    Total Value
-                  </td>
-                  <td className="px-6 py-4 text-right text-lg font-bold">
-                    ${totalValue}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="text-center mb-8">
-            <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6 mb-6 inline-block">
-              <p className="text-4xl md:text-5xl font-bold mb-2 text-green-700">
-                Your Price: ${yourPrice}
-              </p>
-              <p className="text-lg md:text-xl text-gray-700">
-                Save ${totalValue - yourPrice} today
-              </p>
-            </div>
-            <p className="text-lg md:text-xl text-gray-700 mb-4">
-              That's less than two months of buying overpriced bread, ferments, and "gut health" products from the store.
-            </p>
-            <p className="text-lg md:text-xl text-gray-700 mb-4">
-              Less than what most families spend on supplements that don't work as well as real food.
-            </p>
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4 text-left max-w-2xl mx-auto">
-              <p className="text-lg md:text-xl font-semibold text-gray-900">
-                ✓ One-time investment — not a subscription that drains your account every month
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Button
-              onClick={handleCTA}
-              size="lg"
-              className="text-lg px-8 py-4"
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-5xl mx-auto">
+        {/* Main Card Container */}
+        <div className="bg-[#f8f5f1] border border-[#e6e2d6] rounded-[24px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] overflow-hidden">
+          {/* Top Banner */}
+          <div className="bg-[#1e3e2f] py-4 text-center">
+            <p
+              className="text-white text-sm font-medium leading-[20px] uppercase tracking-[1.4px]"
+              style={{ fontFamily: "'Lato', sans-serif" }}
             >
-              JOIN PANTRY OF PLENTY — $197
-            </Button>
+              Lifetime Access • One-Time Payment
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2">
+            {/* Left Side: Your Investment */}
+            <div className="bg-white border-r border-[#e6e2d6] p-8 md:p-12 flex flex-col justify-center items-center text-center">
+              <h2
+                className="text-3xl md:text-[30px] font-medium mb-4 leading-[36px] text-[#1e3e2f]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Your Investment
+              </h2>
+              <p
+                className="text-base md:text-lg mb-6 leading-[24px] text-[rgba(42,42,42,0.7)]"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                That's less than two months of buying overpriced bread, ferments, and "gut health" products.
+              </p>
+              <div className="flex items-baseline justify-center mb-8">
+                <span
+                  className="text-4xl md:text-[48px] font-bold text-[#d76f30] mr-3 leading-[48px]"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  $197
+                </span>
+                <span
+                  className="text-xl md:text-[20px] text-[rgba(42,42,42,0.4)] line-through leading-[28px]"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  $899
+                </span>
+              </div>
+              <Button
+                onClick={handleEnrollment}
+                className="w-full max-w-[350px] bg-[#1e3e2f] hover:bg-[#162e23] text-white px-4 py-6 rounded-[10px] text-lg font-medium mb-4 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                Join Pantry of Plenty
+              </Button>
+              <div className="text-xs leading-[16px] text-[rgba(42,42,42,0.5)] text-center">
+                <p
+                  className="mb-1"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  Secure 128-bit SSL Encrypted Payment.
+                </p>
+                <p
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  30-Day Happiness Guarantee.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side: What You're Getting */}
+            <div className="bg-[#f8f5f1] p-8 md:p-12 flex flex-col">
+              <h3
+                className="text-xl md:text-[20px] font-medium mb-6 leading-[28px] text-[#1e3e2f]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                What You're Getting:
+              </h3>
+              <div className="flex flex-col gap-4 mb-6">
+                {includedItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between items-center pb-1 border-b border-[#e6e2d6]"
+                  >
+                    <span
+                      className="text-sm font-medium text-[#2a2a2a] leading-[20px]"
+                      style={{ fontFamily: "'Lato', sans-serif" }}
+                    >
+                      {item.name}
+                    </span>
+                    <span
+                      className="text-sm font-bold text-[rgba(30,62,47,0.6)] leading-[20px]"
+                      style={{ fontFamily: "'Lato', sans-serif" }}
+                    >
+                      ${item.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between items-center pt-2 border-t-2 border-[#e6e2d6]">
+                <span
+                  className="text-lg font-bold text-[#1e3e2f] leading-[28px]"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  Total Value
+                </span>
+                <span
+                  className="text-xl font-bold text-[#1e3e2f] leading-[28px]"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  ${totalValue}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }
-

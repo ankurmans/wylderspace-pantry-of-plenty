@@ -1,17 +1,21 @@
 'use client'
 
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { ProblemSection } from '@/components/sections/ProblemSection'
 import { SolutionSection } from '@/components/sections/SolutionSection'
 import { WhatThisIsSection } from '@/components/sections/WhatThisIsSection'
 import { FuturePacingSection } from '@/components/sections/FuturePacingSection'
-import { WhatsIncludedSection } from '@/components/sections/WhatsIncludedSection'
+import { CurriculumSection } from '@/components/sections/CurriculumSection'
+import { LiveTrainingSection } from '@/components/sections/LiveTrainingSection'
+import { CookbookSection } from '@/components/sections/CookbookSection'
+import { CommunitySection } from '@/components/sections/CommunitySection'
 import { CredibilitySection } from '@/components/sections/CredibilitySection'
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 import { InvestmentSection } from '@/components/sections/InvestmentSection'
 import { QualificationSection } from '@/components/sections/QualificationSection'
 import { FAQSection } from '@/components/sections/FAQSection'
-import { FinalCTASection } from '@/components/sections/FinalCTASection'
 import { StickyCTA } from '@/components/ui/StickyCTA'
 import { useEffect } from 'react'
 
@@ -49,12 +53,13 @@ export default function Home() {
     document.head.appendChild(script)
 
     return () => {
-      document.head.removeChild(script)
+      if (document.head.contains(script)) {
+        document.head.removeChild(script)
+      }
     }
   }, [])
 
   const handleEnrollment = () => {
-    // TODO: Implement enrollment logic
     const element = document.getElementById('investment')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -62,27 +67,37 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen">
-      <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <WhatThisIsSection />
-      <FuturePacingSection />
-      <WhatsIncludedSection />
-      <CredibilitySection />
-      <TestimonialsSection />
-      <div id="investment">
-        <InvestmentSection />
-      </div>
-      <QualificationSection />
-      <FAQSection />
-      <FinalCTASection />
-      <StickyCTA
-        text="Join Pantry of Plenty"
-        buttonText="Enroll Now — $197"
-        price="$197"
-        onClick={handleEnrollment}
-      />
-    </main>
+    <>
+      <Header />
+      <main className="min-h-screen">
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <WhatThisIsSection />
+        <FuturePacingSection />
+        <CurriculumSection />
+        <LiveTrainingSection />
+        <CookbookSection />
+        <CommunitySection />
+        <div id="about">
+          <CredibilitySection />
+        </div>
+        <div id="testimonials">
+          <TestimonialsSection />
+        </div>
+        <div id="investment">
+          <InvestmentSection />
+        </div>
+        <QualificationSection />
+        <FAQSection />
+        <StickyCTA
+          text="Join Pantry of Plenty"
+          buttonText="Enroll Now — $197"
+          price="$197"
+          onClick={handleEnrollment}
+        />
+      </main>
+      <Footer />
+    </>
   )
 }

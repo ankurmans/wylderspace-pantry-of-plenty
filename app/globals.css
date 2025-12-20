@@ -4,11 +4,16 @@
 
 @import '../styles/tokens.css';
 
+/* Import Google Fonts to match Figma design */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
   /* Design tokens will be synced from Figma */
   --color-background: #ffffff;
   --color-foreground: #000000;
-  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --color-primary: #1e3e2f; /* Dark green from Figma */
 }
 
 * {
@@ -61,5 +66,16 @@ body {
 /* Smooth transitions */
 .transition-smooth {
   transition: all 0.3s ease-in-out;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 80px;
 }
 

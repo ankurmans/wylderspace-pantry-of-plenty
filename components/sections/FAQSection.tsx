@@ -1,8 +1,14 @@
-import React from 'react'
-import { Container } from '@/components/ui/Container'
-import { Accordion } from '@/components/ui/Accordion'
+'use client'
+
+import React, { useState } from 'react'
+
+// Icon URL from Figma
+const chevronIconUrl = "http://localhost:3845/assets/6c4fb80f22cf42a12b8e351c48db46d021488ab4.svg"
 
 export const FAQSection: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [iconError, setIconError] = useState(false)
+
   const faqItems = [
     {
       question: 'How much time does this take each week?',
@@ -34,17 +40,79 @@ export const FAQSection: React.FC = () => {
     },
   ]
 
+  const toggleItem = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <Container>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            Questions You Might Have
-          </h2>
-          <Accordion items={faqItems} />
+    <section className="py-16 md:py-24 bg-[#f8f5f1]">
+      <div className="max-w-4xl mx-auto px-6">
+        {/* Heading */}
+        <h2
+          className="text-3xl md:text-[30px] font-medium mb-12 text-center leading-[36px] text-[#1e3e2f]"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          Questions You Might Have
+        </h2>
+
+        {/* FAQ Items */}
+        <div className="flex flex-col gap-4">
+          {faqItems.map((item, index) => {
+            const isOpen = openIndex === index
+            const isLast = index === faqItems.length - 1
+
+            return (
+              <div
+                key={index}
+                className={`bg-white border border-[#e6e2d6] rounded-[10px] overflow-hidden ${
+                  isLast ? 'border-b-0' : ''
+                }`}
+              >
+                <button
+                  onClick={() => toggleItem(index)}
+                  className="w-full px-4 py-4 flex items-center justify-between text-left"
+                >
+                  <p
+                    className="text-lg font-medium leading-[28px] text-[#1e3e2f] pr-4"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    {item.question}
+                  </p>
+                  <div className="flex-shrink-0">
+                    {iconError ? (
+                      <svg
+                        className={`w-4 h-4 text-[#1e3e2f] transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    ) : (
+                      <img
+                        src={chevronIconUrl}
+                        alt=""
+                        className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                        onError={() => setIconError(true)}
+                      />
+                    )}
+                  </div>
+                </button>
+                {isOpen && (
+                  <div className="px-4 pb-4">
+                    <p
+                      className="text-base leading-[24px] text-[rgba(42,42,42,0.8)]"
+                      style={{ fontFamily: "'Lato', sans-serif" }}
+                    >
+                      {item.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
-      </Container>
+      </div>
     </section>
   )
 }
-

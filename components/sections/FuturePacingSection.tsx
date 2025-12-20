@@ -1,45 +1,84 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 
 export const FuturePacingSection: React.FC = () => {
+  // Icon URLs from Figma
+  const iconPantry = "http://localhost:3845/assets/a7249957e10d33d7140dcda747fc2f1c6eddb769.svg"
+  const iconClock = "http://localhost:3845/assets/af60f5c34f970a1ed392ce9a3a9a514ff5561df1.svg"
+  const iconStar = "http://localhost:3845/assets/ef4d9c0763c827b9e031e789cc8470a25d63292f.svg"
+
   const scenarios = [
     {
-      title: 'A pantry that works like a small grocery store — inside your home.',
-      description: 'No more emergency runs to the store. No more staring into the fridge wondering what to make. Your shelves are stocked with real, ready-to-use staples — ferments, soaked grains, preserved vegetables, homemade staples — so you can cook nourishing meals without stress or guesswork.',
+      icon: iconPantry,
+      title: 'A Pantry That Works Like a Store',
+      description: 'No more emergency runs. Your shelves are stocked with real, ready-to-use staples — ferments, soaked grains, preserved vegetables — so you can cook nourishing meals without stress.',
     },
     {
-      title: 'Food prepared ahead, so dinner doesn\'t rely on last-minute decisions.',
-      description: 'There\'s sourdough rising on the counter. Beans soaking. Grains ready to cook. Fermented vegetables adding life to every meal. Tomorrow\'s food is already in motion before you even think about it.',
+      icon: iconClock,
+      title: 'Food Prepared Ahead',
+      description: 'There\'s sourdough rising. Beans soaking. Fermented vegetables adding life to every meal. Tomorrow\'s food is already in motion before you even think about it.',
     },
     {
-      title: 'Staples made once, used many times.',
-      description: 'One sourdough starter becomes bread, pancakes, pizza dough, crackers, and flatbreads. One batch of preserved tomatoes stretches across dozens of meals. One afternoon of fermenting gives you weeks of probiotic-rich sides. This is where time and money stretch further.',
-    },
-    {
-      title: 'And the quiet confidence of knowing you can feed your family — no matter what.',
-      description: '',
+      icon: iconStar,
+      title: 'Staples Made Once, Used Many Times',
+      description: 'One sourdough starter becomes bread, pancakes, pizza. One afternoon of fermenting gives you weeks of sides. This is where time and money stretch further.',
     },
   ]
 
+  const [iconErrors, setIconErrors] = useState<Record<number, boolean>>({})
+
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-[#f8f5f1]">
       <Container>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <div className="max-w-6xl mx-auto">
+          {/* Heading - Playfair Display Medium, 36px, #1e3e2f, centered */}
+          <h2 
+            className="text-3xl md:text-[36px] font-medium mb-16 text-center leading-[40px] text-[#1e3e2f]"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             Here's Life on the Other Side
           </h2>
 
-          <div className="space-y-12">
+          {/* Three Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
             {scenarios.map((scenario, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-sm">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900">
+              <div
+                key={index}
+                className="bg-white border border-[#e6e2d6] rounded-[16px] shadow-sm p-8"
+              >
+                {/* Icon Container - Dark green circle background */}
+                <div className="bg-[rgba(30,62,47,0.05)] rounded-full w-12 h-12 flex items-center justify-center mb-6">
+                  {iconErrors[index] ? (
+                    <div className="w-6 h-6 text-[#1e3e2f]">
+                      {index === 0 ? '🏪' : index === 1 ? '⏰' : '⭐'}
+                    </div>
+                  ) : (
+                    <img 
+                      src={scenario.icon} 
+                      alt="" 
+                      className="w-6 h-6"
+                      onError={() => setIconErrors(prev => ({ ...prev, [index]: true }))}
+                    />
+                  )}
+                </div>
+                
+                {/* Heading - Playfair Display Bold, 20px, #1e3e2f */}
+                <h3 
+                  className="text-xl font-bold mb-4 text-[#1e3e2f] leading-[28px]"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
                   {scenario.title}
                 </h3>
-                {scenario.description && (
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {scenario.description}
-                  </p>
-                )}
+                
+                {/* Text - Lato Regular, 16px, rgba(42,42,42,0.7) */}
+                <p 
+                  className="text-base leading-[24px] text-[rgba(42,42,42,0.7)]"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  {scenario.description}
+                </p>
               </div>
             ))}
           </div>
@@ -48,4 +87,3 @@ export const FuturePacingSection: React.FC = () => {
     </section>
   )
 }
-
