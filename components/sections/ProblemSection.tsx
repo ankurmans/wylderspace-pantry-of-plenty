@@ -1,14 +1,14 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 
 export const ProblemSection: React.FC = () => {
-  // Icon URLs from Figma - these will work when Figma desktop app is running
-  const iconDollar = "http://localhost:3845/assets/10b46e9bfec11e0270c400eed9716870897e8944.svg"
-  const iconWave = "http://localhost:3845/assets/77c65e6d528eee17978e253f4f771fe0d310d580.svg"
-  const iconExclamation = "http://localhost:3845/assets/e1697f2ca4c7f3e97f0d40f726b117492f3f6ebb.svg"
-  const iconX = "http://localhost:3845/assets/8da770515981d9915de995ba0bf85ba5156bfaf3.svg"
+  // Icon paths from local assets folder (public/assets/)
+  const iconDollar = "/assets/dollar-icon.svg"
+  const iconWave = "/assets/wave-icon.svg"
+  const iconExclamation = "/assets/exclamation-icon.svg"
+  const iconX = "/assets/x-icon.svg"
 
   const problems = [
     {

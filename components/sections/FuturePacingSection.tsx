@@ -5,9 +5,9 @@ import { Container } from '@/components/ui/Container'
 
 export const FuturePacingSection: React.FC = () => {
   // Icon URLs from Figma
-  const iconPantry = "http://localhost:3845/assets/a7249957e10d33d7140dcda747fc2f1c6eddb769.svg"
-  const iconClock = "http://localhost:3845/assets/af60f5c34f970a1ed392ce9a3a9a514ff5561df1.svg"
-  const iconStar = "http://localhost:3845/assets/ef4d9c0763c827b9e031e789cc8470a25d63292f.svg"
+  const iconPantry = "/assets/pantry-icon.svg"
+  const iconClock = "/assets/clock-icon.svg"
+  const iconStar = "/assets/star-icon.svg"
 
   const scenarios = [
     {

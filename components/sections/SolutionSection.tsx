@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 
 export const SolutionSection: React.FC = () => {
-  // Icon URL from Figma
-  const iconAncient = "http://localhost:3845/assets/0e999887a7ea38b0a894cfe7bb46433837ef73b9.svg"
+  // Icon path from local assets folder (public/assets/)
+  const iconAncient = "/assets/ancient-icon.svg"
 
   const methods = [
     'Bread risen slowly on the counter.',
