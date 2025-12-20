@@ -26,7 +26,7 @@ export const WhatThisIsSection: React.FC = () => {
             className="text-3xl md:text-[36px] font-medium mb-6 text-center leading-[40px] text-white"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Questionsa Course. It's a Kitchen Transformation.
+            This is not a Course. It's a Kitchen Transformation.
           </h2>
           
           {/* Intro Paragraph - Lato Regular, 18px, rgba(255,255,255,0.8), centered */}
