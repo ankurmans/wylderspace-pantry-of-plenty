@@ -1,13 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-
-// Icon URL from Figma
-const chevronIconUrl = "http://localhost:3845/assets/6c4fb80f22cf42a12b8e351c48db46d021488ab4.svg"
+import { ChevronDown } from 'lucide-react'
 
 export const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const [iconError, setIconError] = useState(false)
 
   const faqItems = [
     {
@@ -79,23 +76,9 @@ export const FAQSection: React.FC = () => {
                     {item.question}
                   </p>
                   <div className="flex-shrink-0">
-                    {iconError ? (
-                      <svg
-                        className={`w-4 h-4 text-[#1e3e2f] transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    ) : (
-                      <img
-                        src={chevronIconUrl}
-                        alt=""
-                        className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                        onError={() => setIconError(true)}
-                      />
-                    )}
+                    <ChevronDown
+                      className={`w-4 h-4 text-[#1e3e2f] transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    />
                   </div>
                 </button>
                 {isOpen && (

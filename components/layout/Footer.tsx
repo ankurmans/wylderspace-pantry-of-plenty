@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 
 // Icon URL from Figma
-const logoIconUrl = "http://localhost:3845/assets/cbb40c4bd14c3f9fae9d47a88018f5c120d2abac.svg"
+const logoIconUrl = "/assets/ancient-icon.svg"
 
 export const Footer: React.FC = () => {
   const [iconError, setIconError] = useState(false)

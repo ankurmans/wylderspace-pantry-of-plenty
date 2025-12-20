@@ -1,11 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Container } from '@/components/ui/Container'
-
-// Icon URLs from Figma
-const checkIconUrl = "http://localhost:3845/assets/5152c54661a4827b59408d16b43698adc052b840.svg"
-const xIconUrl = "http://localhost:3845/assets/feb8e6660ce44111388981e7617446ba6807e4d1.svg"
+import { Check, X } from 'lucide-react'
 
 export const QualificationSection: React.FC = () => {
   const forYouItems = [
@@ -22,12 +19,6 @@ export const QualificationSection: React.FC = () => {
     'You\'re happy with the current food system and how it\'s serving your family',
   ]
 
-  const [iconErrors, setIconErrors] = useState<Record<string, boolean>>({})
-
-  const handleIconError = (id: string) => {
-    setIconErrors(prev => ({ ...prev, [id]: true }))
-  }
-
   return (
     <section className="py-16 md:py-24 bg-white">
       <Container>
@@ -39,16 +30,7 @@ export const QualificationSection: React.FC = () => {
                 className="text-2xl md:text-[24px] font-medium leading-[32px] text-[#1e3e2f] flex items-center gap-2"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                {iconErrors['check-heading'] ? (
-                  <span className="text-[#1e3e2f]">✓</span>
-                ) : (
-                  <img
-                    src={checkIconUrl}
-                    alt="Checkmark icon"
-                    className="w-5 h-5"
-                    onError={() => handleIconError('check-heading')}
-                  />
-                )}
+                <span className="text-[#1e3e2f]">✓</span>
                 This Is For You If...
               </h3>
               <p
@@ -61,16 +43,7 @@ export const QualificationSection: React.FC = () => {
                 {forYouItems.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-0.5">
-                      {iconErrors[`check-item-${index}`] ? (
-                        <span className="text-[#1e3e2f]">✓</span>
-                      ) : (
-                        <img
-                          src={checkIconUrl}
-                          alt="Checkmark icon"
-                          className="w-5 h-5"
-                          onError={() => handleIconError(`check-item-${index}`)}
-                        />
-                      )}
+                      <Check className="w-5 h-5 text-[#1e3e2f]" />
                     </div>
                     <span
                       className="text-base leading-[24px] text-[rgba(42,42,42,0.8)]"
@@ -89,32 +62,14 @@ export const QualificationSection: React.FC = () => {
                 className="text-2xl md:text-[24px] font-medium leading-[32px] text-[#d76f30] flex items-center gap-2"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                {iconErrors['x-heading'] ? (
-                  <span className="text-[#d76f30]">✗</span>
-                ) : (
-                  <img
-                    src={xIconUrl}
-                    alt="X-mark icon"
-                    className="w-5 h-5"
-                    onError={() => handleIconError('x-heading')}
-                  />
-                )}
+                <span className="text-[#d76f30]">✗</span>
                 This Might Not Be For You If...
               </h3>
               <ul className="flex flex-col gap-4">
                 {notForYouItems.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-0.5">
-                      {iconErrors[`x-item-${index}`] ? (
-                        <span className="text-[#d76f30]">✗</span>
-                      ) : (
-                        <img
-                          src={xIconUrl}
-                          alt="X-mark icon"
-                          className="w-5 h-5"
-                          onError={() => handleIconError(`x-item-${index}`)}
-                        />
-                      )}
+                      <X className="w-5 h-5 text-[#d76f30]" />
                     </div>
                     <span
                       className="text-base leading-[24px] text-[rgba(42,42,42,0.8)]"

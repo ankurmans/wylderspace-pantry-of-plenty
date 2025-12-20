@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: 'Learn the foundational food skills behind a truly nourishing home. An 8-week guided experience teaching traditional cooking methods including sourdough, fermentation, and pantry management. Join Chef Molly Bravo for $197.',
   keywords: ['traditional cooking', 'sourdough', 'fermentation', 'pantry skills', 'home cooking', 'canning', 'preserving food', 'traditional foods', 'kitchen skills'],
   authors: [{ name: 'Molly Bravo' }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'Pantry of Plenty - Traditional Foods Pathway',
     description: 'Learn the foundational food skills behind a truly nourishing home. An 8-week guided experience teaching traditional cooking methods.',
