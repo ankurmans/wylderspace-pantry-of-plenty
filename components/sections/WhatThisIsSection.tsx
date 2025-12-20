@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 
 export const WhatThisIsSection: React.FC = () => {
-  // Icon URL from Figma
-  const checkIcon = "http://localhost:3845/assets/21f2f48c30d9be4921205a1fa3310c3ca3af3ba2.svg"
+  // Icon path from local assets folder (public/assets/)
+  const checkIcon = "/assets/check-icon.svg"
 
   const benefits = [
     'Cuts your grocery bill by making staples yourself instead of buying them',
@@ -26,7 +26,7 @@ export const WhatThisIsSection: React.FC = () => {
             className="text-3xl md:text-[36px] font-medium mb-6 text-center leading-[40px] text-white"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            This Is Not a Course. It's a Kitchen Transformation.
+            Questionsa Course. It's a Kitchen Transformation.
           </h2>
           
           {/* Intro Paragraph - Lato Regular, 18px, rgba(255,255,255,0.8), centered */}
