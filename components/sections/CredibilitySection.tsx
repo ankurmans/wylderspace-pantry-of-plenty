@@ -5,8 +5,8 @@ import { Container } from '@/components/ui/Container'
 import Image from 'next/image'
 
 export const CredibilitySection: React.FC = () => {
-  // Image URL from Figma
-  const mollyImage = "http://localhost:3845/assets/a14dd008b941b586941e48c415d4dfa0be3b01f9.png"
+  // Image path from local assets folder (public/assets/)
+  const mollyImage = "/assets/molly-bravo-pantry-of-plenty-wylderspace.jpeg"
 
   const mentions = [
     'The Knot',

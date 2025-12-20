@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 
 export const CommunitySection: React.FC = () => {
-  // Checkmark icon URL from Figma
-  const checkIconUrl = "http://localhost:3845/assets/21f2f48c30d9be4921205a1fa3310c3ca3af3ba2.svg"
+  // Checkmark icon path from local assets folder (public/assets/)
+  const checkIconUrl = "/assets/check-icon.svg"
 
   const communityBenefits = [
     'Ask questions between sessions',
@@ -28,7 +28,7 @@ export const CommunitySection: React.FC = () => {
                 className="text-3xl md:text-[36px] font-medium mb-6 leading-[40px] text-[#1e3e2f]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                3 Months Inside the Sovereign Kitchen Society
+                3 Months Inside the Questions Kitchen Society
               </h3>
 
               {/* Description - Lato Regular, 18px, rgba(42,42,42,0.8) */}
@@ -36,7 +36,7 @@ export const CommunitySection: React.FC = () => {
                 className="text-lg mb-6 leading-[29.25px] text-[rgba(42,42,42,0.8)]"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
-                You won't do this alone. The Sovereign Kitchen Society is our private community (off social media) where women learning these skills support each other.
+                You won't do this alone. The Questions Kitchen Society is our private community (off social media) where women learning these skills support each other.
               </p>
 
               {/* List Items */}

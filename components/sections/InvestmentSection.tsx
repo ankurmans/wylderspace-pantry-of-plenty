@@ -13,7 +13,7 @@ export const InvestmentSection: React.FC = () => {
     { name: 'Weekly Q&A Sessions', value: 160 },
     { name: 'Weekly Cooking Demos', value: 80 },
     { name: 'The Essential Canning Cookbook (Signed)', value: 25 },
-    { name: '3 Months in Sovereign Kitchen Society', value: 97 },
+    { name: '3 Months in Questions Kitchen Society', value: 97 },
   ]
 
   const totalValue = includedItems.reduce((sum, item) => sum + item.value, 0)

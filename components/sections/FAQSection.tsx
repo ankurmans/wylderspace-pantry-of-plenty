@@ -32,7 +32,7 @@ export const FAQSection: React.FC = () => {
     },
     {
       question: 'Is this a subscription?',
-      answer: 'No. $197 is a one-time payment. You get lifetime access to the course modules, plus 3 months in the Sovereign Kitchen Society.',
+      answer: 'No. $197 is a one-time payment. You get lifetime access to the course modules, plus 3 months in the Questions Kitchen Society.',
     },
     {
       question: 'What if I\'m not satisfied?',

@@ -1,13 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Container } from '@/components/ui/Container'
+import { Star } from 'lucide-react'
 
 export const CookbookSection: React.FC = () => {
-  // Star icon URL from Figma
-  const starIconUrl = "http://localhost:3845/assets/bc3f1fd8c31c0dd7ddbbbe2428b047e9db7db877.svg"
-
-  const [iconErrors, setIconErrors] = useState<Record<string, boolean>>({})
 
   return (
     <section className="bg-white py-16 md:py-24">
@@ -74,23 +71,9 @@ export const CookbookSection: React.FC = () => {
               <div className="bg-[#f8f5f1] border border-[#e6e2d6] rounded-[14px] shadow-sm p-6 mb-4">
                 {/* Star Rating */}
                 <div className="flex gap-1 mb-4">
-                  {iconErrors['star-rating'] ? (
-                    [...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-[#d76f30] fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                      </svg>
-                    ))
-                  ) : (
-                    [...Array(5)].map((_, i) => (
-                      <img
-                        key={i}
-                        src={starIconUrl}
-                        alt=""
-                        className="w-5 h-5"
-                        onError={() => setIconErrors(prev => ({ ...prev, 'star-rating': true }))}
-                      />
-                    ))
-                  )}
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-[#d76f30] fill-[#d76f30]" />
+                  ))}
                 </div>
 
                 {/* Quote - Playfair Display Italic, 18px, #555 */}
