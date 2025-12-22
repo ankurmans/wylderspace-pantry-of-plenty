@@ -205,7 +205,7 @@ export const Footer: React.FC = () => {
             className="text-sm text-center text-[rgba(255,255,255,0.4)]"
             style={{ fontFamily: "'Lato', sans-serif" }}
           >
-            © 2025 Molly Bravo & Pantry of Plenty. All rights reserved.
+            © 2025 Wyler Space, Inc. All rights reserved.
           </p>
         </div>
       </div>

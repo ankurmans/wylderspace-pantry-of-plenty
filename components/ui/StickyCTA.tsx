@@ -6,29 +6,50 @@ import { getNextCohortDate } from '@/lib/utils'
 export interface StickyCTAProps {
   text?: string
   buttonText?: string
-  price?: string
   onClick?: () => void
-  showAfterScroll?: number
 }
 
 export const StickyCTA: React.FC<StickyCTAProps> = ({
   text = 'Join Pantry of Plenty',
   buttonText = 'Enroll Now',
-  price = '$197',
   onClick,
-  showAfterScroll = 400,
 }) => {
   const [isVisible, setIsVisible] = useState(false)
+  const [hasReachedCurriculum, setHasReachedCurriculum] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset
-      setIsVisible(scrollY > showAfterScroll)
-    }
+    const curriculumSection = document.getElementById('curriculum')
+    if (!curriculumSection) return
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [showAfterScroll])
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Once curriculum section comes into view, mark it and show CTA
+          if (entry.isIntersecting) {
+            setHasReachedCurriculum(true)
+            setIsVisible(true)
+          }
+        })
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+        rootMargin: '0px',
+      }
+    )
+
+    observer.observe(curriculumSection)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
+  // Keep CTA visible once curriculum section has been reached
+  useEffect(() => {
+    if (hasReachedCurriculum) {
+      setIsVisible(true)
+    }
+  }, [hasReachedCurriculum])
 
   if (!isVisible) return null
 
@@ -48,16 +69,14 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
             >
               {text}
             </p>
-            {price && (
-              <p
-                className="text-sm sm:text-base text-[rgba(42,42,42,0.7)]"
-                style={{ fontFamily: "'Lato', sans-serif" }}
-              >
-                {price} — One-Time Investment
-              </p>
-            )}
+            <p
+              className="text-xs sm:text-sm text-[rgba(42,42,42,0.7)] mt-1"
+              style={{ fontFamily: "'Lato', sans-serif" }}
+            >
+              Next cohort begins {getNextCohortDate()}
+            </p>
           </div>
-          <div className="flex-shrink-0 flex flex-col items-center gap-1 w-full sm:w-auto">
+          <div className="flex-shrink-0 w-full sm:w-auto">
             <button
               onClick={onClick}
               className="w-full sm:w-auto bg-[#1e3e2f] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#162e23] transition-colors"
@@ -65,12 +84,6 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
             >
               {buttonText}
             </button>
-            <p
-              className="text-xs sm:text-sm text-[rgba(42,42,42,0.7)] text-center"
-              style={{ fontFamily: "'Lato', sans-serif" }}
-            >
-              Next cohort begins {getNextCohortDate()}
-            </p>
           </div>
         </div>
       </div>

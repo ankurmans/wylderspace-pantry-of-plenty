@@ -94,7 +94,6 @@ export default function Home() {
         <StickyCTA
           text="Join Pantry of Plenty"
           buttonText="Enroll Now — $197"
-          price="$197"
           onClick={handleEnrollment}
         />
       </main>

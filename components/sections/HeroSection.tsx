@@ -113,8 +113,8 @@ export const HeroSection: React.FC = () => {
       />
 
       {/* Text Content Overlay */}
-      <div className="relative z-10 w-full flex items-start md:items-center pt-8 md:pt-0 pb-12 md:pb-0 md:h-screen md:min-h-[800px]">
-        <div className="max-w-7xl mx-auto w-full px-4 md:px-12 pt-6 md:pt-0">
+      <div className="relative z-10 w-full flex items-start md:items-center pt-0 md:pt-0 pb-12 md:pb-0 md:h-screen md:min-h-[800px]">
+        <div className="max-w-7xl mx-auto w-full px-4 md:px-12 pt-0 md:pt-0">
             <div className="max-w-[563px]">
             {/* Main Headline - Playfair Display Medium, 60px, white */}
               <h1 
