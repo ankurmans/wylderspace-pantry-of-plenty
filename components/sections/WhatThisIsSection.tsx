@@ -104,7 +104,7 @@ export const WhatThisIsSection: React.FC = () => {
               className="bg-[#d76f30] hover:bg-[#c05d26] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.3),0px_4px_6px_-4px_rgba(0,0,0,0.2)] text-base md:text-lg font-medium uppercase tracking-[0.45px] mb-2"
               style={{ fontFamily: "'Lato', sans-serif" }}
             >
-              Join Pantry of Plenty — $197
+              Join Pantry of Plenty
             </Button>
             <p
               className="text-sm text-[rgba(255,255,255,0.7)]"

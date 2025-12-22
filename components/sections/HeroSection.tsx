@@ -126,7 +126,7 @@ export const HeroSection: React.FC = () => {
               
             {/* Subheadline - Playfair Display Italic, 24px, white with opacity */}
               <p 
-              className="text-lg md:text-[24px] mb-3 md:mb-6 leading-snug md:leading-[29.25px] italic text-white/90 drop-shadow-md"
+              className="text-xl md:text-2xl mb-3 md:mb-6 leading-snug md:leading-[29.25px] italic text-white/90 drop-shadow-md"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 She made it on the counter. With three ingredients. And it fed her family for pennies.
@@ -134,7 +134,7 @@ export const HeroSection: React.FC = () => {
               
             {/* Body Text - Lato Regular, 18px, white with opacity */}
               <p 
-              className="text-base md:text-lg mb-3 md:mb-6 leading-relaxed md:leading-[29.25px] text-white/85 drop-shadow-md"
+              className="text-lg md:text-lg mb-3 md:mb-6 leading-relaxed md:leading-[29.25px] text-white/85 drop-shadow-md"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
                 Somewhere along the way, we forgot how to do this. Now we pay $12 for a loaf of sourdough that costs almost nothing to make. And we wonder why grocery bills keep climbing while our energy keeps dropping.
@@ -142,7 +142,7 @@ export const HeroSection: React.FC = () => {
               
             {/* Concluding Statement - Lato Bold, 18px, white with opacity */}
               <p 
-              className="text-base md:text-lg mb-5 md:mb-8 leading-relaxed md:leading-[29.25px] font-bold text-white/90 drop-shadow-md"
+              className="text-lg md:text-lg mb-5 md:mb-8 leading-relaxed md:leading-[29.25px] font-bold text-white/90 drop-shadow-md"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
                 Pantry of Plenty is a return to the kitchen skills that actually work.
@@ -155,7 +155,7 @@ export const HeroSection: React.FC = () => {
                 className="bg-[#d76f30] hover:bg-[#c05d26] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.3),0px_4px_6px_-4px_rgba(0,0,0,0.2)] text-base md:text-lg font-medium uppercase tracking-[0.45px] mb-2"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
-                Join Pantry of Plenty — $197
+                Join Pantry of Plenty
               </Button>
               <p
                 className="text-sm text-white/70"

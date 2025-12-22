@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
                   <p
                     style={{ fontFamily: "'Lato', sans-serif" }}
                   >
-                    — Molly
+                    — Molly Bravo
                   </p>
                 </div>
               </div>
