@@ -3,6 +3,19 @@
 import React, { useMemo } from 'react'
 import { Button } from '@/components/ui/Button'
 import { getNextCohortDate } from '@/lib/utils'
+import { Star, Shield, CheckCircle2 } from 'lucide-react'
+
+// Configurable metrics for social proof and credibility
+const SOCIAL_PROOF_METRICS = {
+  STUDENT_COUNT: 2500,
+  AVERAGE_RATING: 4.9,
+  REVIEW_COUNT: 527,
+  RECENT_ENROLLMENTS: 47,
+  SATISFACTION_RATE: 98,
+  SPOTS_REMAINING: 7,
+}
+
+const AUTHORITY_MENTIONS = ['Milk Street', 'Foody TV', 'HarperCollins', 'The Knot']
 
 export const HeroSection: React.FC = () => {
   const handleCTA = () => {
@@ -142,27 +155,112 @@ export const HeroSection: React.FC = () => {
               
             {/* Concluding Statement - Lato Bold, 18px, white with opacity */}
               <p 
-              className="text-lg md:text-lg mb-5 md:mb-8 leading-relaxed md:leading-[29.25px] font-bold text-white/90 drop-shadow-md"
+              className="text-lg md:text-lg mb-5 md:mb-5 leading-relaxed md:leading-[29.25px] font-bold text-white/90 drop-shadow-md"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
                 Pantry of Plenty is a return to the kitchen skills that actually work.
               </p>
+
+            {/* Social Proof - Star Rating & Review Count */}
+            <div className="mb-4 md:mb-6 flex items-center gap-3">
+              <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5">
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-3.5 h-3.5 ${
+                        i < Math.floor(SOCIAL_PROOF_METRICS.AVERAGE_RATING)
+                          ? 'text-[#d76f30] fill-[#d76f30]'
+                          : i < SOCIAL_PROOF_METRICS.AVERAGE_RATING
+                          ? 'text-[#d76f30] fill-[#d76f30] opacity-50'
+                          : 'text-white/40 fill-none'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span
+                  className="text-sm font-bold text-white"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  {SOCIAL_PROOF_METRICS.AVERAGE_RATING}
+                </span>
+              </div>
+              <p
+                className="text-sm text-white/80"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                {SOCIAL_PROOF_METRICS.REVIEW_COUNT}+ students
+              </p>
+            </div>
               
             {/* CTA Button - Brand orange #d76f30, white text, rounded-full, shadow */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-start md:items-start">
               <Button
                 onClick={handleCTA}
-                className="bg-[#d76f30] hover:bg-[#c05d26] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.3),0px_4px_6px_-4px_rgba(0,0,0,0.2)] text-base md:text-lg font-medium uppercase tracking-[0.45px] mb-2"
+                className="bg-[#d76f30] hover:bg-[#c05d26] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.3),0px_4px_6px_-4px_rgba(0,0,0,0.2)] text-base md:text-lg font-medium uppercase tracking-[0.45px] mb-3 w-full md:w-auto"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
                 Join Pantry of Plenty
               </Button>
-              <p
-                className="text-sm text-white/70"
-                style={{ fontFamily: "'Lato', sans-serif" }}
-              >
-                Next cohort begins {getNextCohortDate()}
-              </p>
+
+              {/* Scarcity - Enhanced Cohort Date with Spots Remaining */}
+              <div className="mb-4">
+                <p
+                  className="text-sm text-white/70 mb-1"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  Next cohort begins {getNextCohortDate()}
+                </p>
+                <p
+                  className="text-sm font-semibold text-[#d76f30]"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  Only {SOCIAL_PROOF_METRICS.SPOTS_REMAINING} spots remaining
+                </p>
+              </div>
+
+              {/* Trust Badges Row */}
+              <div className="flex flex-wrap items-center gap-4 mt-2">
+                <div className="flex items-center gap-1.5">
+                  <Shield className="w-4 h-4 text-white/80" />
+                  <p
+                    className="text-xs text-white/80"
+                    style={{ fontFamily: "'Lato', sans-serif" }}
+                  >
+                    30-Day Money-Back Guarantee
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-white/80" />
+                  <p
+                    className="text-xs text-white/80"
+                    style={{ fontFamily: "'Lato', sans-serif" }}
+                  >
+                    {SOCIAL_PROOF_METRICS.SATISFACTION_RATE}% Satisfaction Rate
+                  </p>
+                </div>
+              </div>
+
+              {/* "As Seen In" Preview */}
+              <div className="mt-4 pt-4 border-t border-white/20">
+                <p
+                  className="text-xs uppercase tracking-wider text-white/60 mb-2"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  As Seen In
+                </p>
+                <div className="flex flex-wrap items-center gap-3">
+                  {AUTHORITY_MENTIONS.map((mention, index) => (
+                    <span
+                      key={index}
+                      className="text-sm font-semibold text-white/80"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {mention}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
