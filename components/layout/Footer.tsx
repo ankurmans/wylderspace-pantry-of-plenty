@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Button } from '@/components/ui/Button'
+import { getNextCohortDate } from '@/lib/utils'
 
 // Icon URL from Figma
 const logoIconUrl = "/assets/ancient-icon.svg"
@@ -10,11 +11,11 @@ export const Footer: React.FC = () => {
   const [iconError, setIconError] = useState(false)
 
   const handleEnrollment = () => {
-    const element = document.getElementById('investment')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
   }
+
+  // Calculate the Monday 2 weeks from today
+  const nextCohortDate = useMemo(() => getNextCohortDate(), [])
 
   return (
     <footer className="bg-[#1e3e2f] text-white">
@@ -48,11 +49,19 @@ export const Footer: React.FC = () => {
           {/* CTA Button */}
           <Button
             onClick={handleEnrollment}
-            className="bg-[#d76f30] hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-medium mb-4 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] uppercase tracking-[0.45px]"
+            className="bg-[#d76f30] hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-medium mb-2 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] uppercase tracking-[0.45px]"
             style={{ fontFamily: "'Lato', sans-serif" }}
           >
             Join Pantry of Plenty
           </Button>
+          
+          {/* Next Cohort Date */}
+          <p
+            className="text-sm mb-4 text-[rgba(255,255,255,0.7)]"
+            style={{ fontFamily: "'Lato', sans-serif" }}
+          >
+            Next cohort begins {nextCohortDate}
+          </p>
           
           {/* Pricing */}
           <p
@@ -82,12 +91,20 @@ export const Footer: React.FC = () => {
                     onError={() => setIconError(true)}
                   />
                 )}
-                <p
-                  className="text-xl font-bold text-white"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Pantry of Plenty
-                </p>
+                <div className="flex flex-col">
+                  <p
+                    className="text-xl font-bold text-white"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Pantry of Plenty
+                  </p>
+                  <p
+                    className="text-sm md:text-sm text-[rgba(255,255,255,0.5)] leading-tight"
+                    style={{ fontFamily: "'Lato', sans-serif" }}
+                  >
+                    By Wylder Space
+                  </p>
+                </div>
               </div>
               
               {/* P.S. Section */}
@@ -108,7 +125,7 @@ export const Footer: React.FC = () => {
                   className="text-base mb-4 leading-[24px] text-[rgba(255,255,255,0.7)]"
                   style={{ fontFamily: "'Lato', sans-serif" }}
                 >
-                  The next cohort begins [DATE]. Your signed cookbook ships as soon as you enroll.
+                  The next cohort begins {nextCohortDate}. Your signed cookbook ships as soon as you enroll.
                 </p>
                 <div className="text-base leading-[24px] text-[rgba(255,255,255,0.7)]">
                   <p
@@ -132,7 +149,7 @@ export const Footer: React.FC = () => {
                 className="text-base font-bold mb-4 text-white"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Course
+                Program
               </h4>
               <ul className="space-y-2">
                 {['Curriculum', 'Pricing', 'Login'].map((link) => (
@@ -161,7 +178,7 @@ export const Footer: React.FC = () => {
                 {['Privacy Policy', 'Terms of Service', 'Contact Support'].map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={link === 'Contact Support' ? 'mailto:molly@wylderspace.com' : '#'}
                       className="text-base leading-[24px] text-[rgba(255,255,255,0.7)] hover:text-white transition-colors"
                       style={{ fontFamily: "'Lato', sans-serif" }}
                     >
@@ -170,6 +187,12 @@ export const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
+              <p
+                className="text-xs mt-4 text-[rgba(255,255,255,0.5)]"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                © 2025 Wyler Space, Inc
+              </p>
             </div>
           </div>
         </div>

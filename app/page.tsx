@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { ProblemSection } from '@/components/sections/ProblemSection'
 import { SolutionSection } from '@/components/sections/SolutionSection'
+import { TestimonialCardSection } from '@/components/sections/TestimonialCardSection'
 import { WhatThisIsSection } from '@/components/sections/WhatThisIsSection'
 import { FuturePacingSection } from '@/components/sections/FuturePacingSection'
 import { CurriculumSection } from '@/components/sections/CurriculumSection'
@@ -60,10 +61,7 @@ export default function Home() {
   }, [])
 
   const handleEnrollment = () => {
-    const element = document.getElementById('investment')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
   }
 
   return (
@@ -74,11 +72,13 @@ export default function Home() {
         <ProblemSection />
         <SolutionSection />
         <WhatThisIsSection />
+        <TestimonialCardSection />
         <FuturePacingSection />
         <CurriculumSection />
         <LiveTrainingSection />
         <CookbookSection />
         <CommunitySection />
+        <TestimonialCardSection testimonialIndex={1} />
         <div id="about">
           <CredibilitySection />
         </div>
@@ -88,6 +88,7 @@ export default function Home() {
         <div id="investment">
           <InvestmentSection />
         </div>
+        <TestimonialCardSection testimonialIndex={2} />
         <QualificationSection />
         <FAQSection />
         <StickyCTA

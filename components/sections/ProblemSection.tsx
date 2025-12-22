@@ -62,12 +62,12 @@ export const ProblemSection: React.FC = () => {
   const [iconErrors, setIconErrors] = useState<Record<number, boolean>>({})
 
   return (
-    <section className="py-16 md:py-24 bg-[#f8f5f1]">
+    <section className="py-12 md:py-18 bg-[#f8f5f1]">
       <Container>
         <div className="max-w-4xl mx-auto">
           {/* Heading - Playfair Display Medium, 36px, #1e3e2f, centered */}
           <h2 
-            className="text-3xl md:text-[36px] font-medium mb-6 text-center leading-[40px] text-[#1e3e2f]"
+            className="text-2xl md:text-[36px] font-bold mb-4 text-center leading-[40px] text-[#1e3e2f]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             You Already Know Something Is Off
@@ -75,7 +75,7 @@ export const ProblemSection: React.FC = () => {
           
           {/* Intro Paragraph - Lato Regular, 18px, rgba(42,42,42,0.8), centered */}
           <p 
-            className="text-lg mb-12 text-center leading-[29.25px] text-[rgba(42,42,42,0.8)]"
+            className="text-lg mb-8 text-center leading-[29.25px] text-[rgba(42,42,42,0.8)]"
             style={{ fontFamily: "'Lato', sans-serif" }}
           >
             You feel it every time you check out at the grocery store. Every time you scan an ingredient list you can't pronounce. The system is expensive — and you're paying for it twice. Once at the register. Again with your health.
@@ -104,7 +104,7 @@ export const ProblemSection: React.FC = () => {
                 
                 {/* Text - Lato Regular, 18px, rgba(42,42,42,0.8) */}
                 <p 
-                  className="text-lg leading-[28px] text-[rgba(42,42,42,0.8)] flex-1"
+                  className="text-base md:text-lg leading-[28px] text-[rgba(42,42,42,0.8)] flex-1"
                   style={{ fontFamily: "'Lato', sans-serif" }}
                 >
                   {problem.text}
@@ -115,7 +115,7 @@ export const ProblemSection: React.FC = () => {
 
           {/* Closing Statement - Playfair Display Italic, 20px, #1e3e2f, centered */}
           <p 
-            className="text-xl italic text-center leading-[28px] text-[#1e3e2f]"
+            className="text-lg md:text-xl font-bold italic text-center leading-[28px] text-[#1e3e2f]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Deep down, you know this isn't how it's supposed to work. You just haven't been shown another way.

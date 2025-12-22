@@ -30,12 +30,12 @@ export const FuturePacingSection: React.FC = () => {
   const [iconErrors, setIconErrors] = useState<Record<number, boolean>>({})
 
   return (
-    <section className="py-16 md:py-24 bg-[#f8f5f1]">
+    <section className="py-12 md:py-24 bg-[#f8f5f1]">
       <Container>
         <div className="max-w-6xl mx-auto">
           {/* Heading - Playfair Display Medium, 36px, #1e3e2f, centered */}
           <h2 
-            className="text-3xl md:text-[36px] font-medium mb-16 text-center leading-[40px] text-[#1e3e2f]"
+            className="text-2xl md:text-[36px] font-bold mb-8 text-center leading-[40px] text-[#1e3e2f]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Here's Life on the Other Side

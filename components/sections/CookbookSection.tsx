@@ -12,7 +12,7 @@ export const CookbookSection: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Cookbook Image */}
-            <div className="relative h-[560px] order-2 md:order-1">
+            <div className="relative h-[560px] order-1">
               {/* Rotated Orange Background Shape */}
               <div className="absolute -left-12 -top-4 w-[622px] h-[619px] flex items-center justify-center">
                 <div className="rotate-[3deg]">
@@ -21,17 +21,20 @@ export const CookbookSection: React.FC = () => {
               </div>
 
               {/* Cookbook Image */}
-              <div className="absolute left-0 top-0 w-[448px] h-[560px] bg-white rounded-[14px] shadow-xl">
-                <div className="w-full h-full bg-gray-200 rounded-[14px]" />
-                {/* Placeholder for cookbook image */}
+              <div className="absolute left-0 top-0 w-[448px] h-[560px] bg-white rounded-[14px] shadow-xl overflow-hidden">
+                <img
+                  src="/assets/the-essential-canning-cookbook-molly-bravo.jpg"
+                  alt="The Essential Canning Cookbook by Molly Bravo"
+                  className="w-full h-full object-cover rounded-[14px]"
+                />
               </div>
 
               {/* "Signed Copy Included!" Badge - Rotated */}
               <div className="absolute right-0 -top-8 w-[135px] h-[135px] flex items-center justify-center">
                 <div className="rotate-[12deg]">
-                  <div className="bg-[#d76f30] rounded-full px-3 py-2 shadow-lg flex items-center justify-center">
+                  <div className="bg-[#d76f30] rounded-full w-[135px] h-[135px] shadow-lg flex items-center justify-center p-4">
                     <p
-                      className="text-sm font-bold text-white text-center leading-[20px]"
+                      className="text-sm font-bold text-white text-center leading-tight"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       Signed Copy Included!
@@ -42,10 +45,10 @@ export const CookbookSection: React.FC = () => {
             </div>
 
             {/* Right Side - Content */}
-            <div className="order-1 md:order-2">
+            <div className="order-2">
               {/* Heading - Playfair Display Medium, 36px, #1e3e2f */}
               <h3
-                className="text-3xl md:text-[36px] font-medium mb-6 leading-[40px] text-[#1e3e2f]"
+                className="text-2xl md:text-[36px] font-bold mb-6 leading-[40px] text-[#1e3e2f]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 The Essential Canning Cookbook

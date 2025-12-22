@@ -2,8 +2,14 @@
 
 import React, { useState } from 'react'
 import { Container } from '@/components/ui/Container'
+import { Button } from '@/components/ui/Button'
+import { getNextCohortDate } from '@/lib/utils'
 
 export const WhatThisIsSection: React.FC = () => {
+  const handleCTA = () => {
+    window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
+  }
+
   // Icon path from local assets folder (public/assets/)
   const checkIcon = "/assets/check-icon.svg"
 
@@ -23,7 +29,7 @@ export const WhatThisIsSection: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           {/* Heading - Playfair Display Medium, 36px, white, centered */}
           <h2 
-            className="text-3xl md:text-[36px] font-medium mb-6 text-center leading-[40px] text-white"
+            className="text-3xl md:text-[36px] font-bold mb-6 text-center leading-[40px] text-white"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             This is not a Course. It's a Kitchen Transformation.
@@ -82,12 +88,29 @@ export const WhatThisIsSection: React.FC = () => {
           </div>
 
           {/* Closing Statement - Playfair Display Italic, 24px, #d76f30 (orange), centered */}
-          <div className="text-center">
+          <div className="text-center mb-8">
             <p 
-              className="text-2xl italic leading-[32px] text-[#d76f30]"
+              className="text-3xl font-medium italic leading-[32px] text-[#d76f30]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               From consumer to creator. From dependent to capable. From stressed to steady.
+            </p>
+          </div>
+
+          {/* CTA Button - Brand orange #d76f30, white text, rounded-full, shadow */}
+          <div className="flex flex-col items-center">
+            <Button
+              onClick={handleCTA}
+              className="bg-[#d76f30] hover:bg-[#c05d26] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.3),0px_4px_6px_-4px_rgba(0,0,0,0.2)] text-base md:text-lg font-medium uppercase tracking-[0.45px] mb-2"
+              style={{ fontFamily: "'Lato', sans-serif" }}
+            >
+              Join Pantry of Plenty — $197
+            </Button>
+            <p
+              className="text-sm text-[rgba(255,255,255,0.7)]"
+              style={{ fontFamily: "'Lato', sans-serif" }}
+            >
+              Next cohort begins {getNextCohortDate()}
             </p>
           </div>
         </div>

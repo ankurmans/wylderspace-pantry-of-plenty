@@ -7,24 +7,24 @@ import { Star } from 'lucide-react'
 export const TestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      quote: "The only 'healthy eating' course I actually finished — and use daily.",
+      quote: "The only course I actually finished — and still use every single week.",
       author: 'Kendall M.',
       role: 'Student',
       initials: 'KM',
       rating: 5, // 5 stars
     },
     {
-      quote: "I never thought I'd be the kind of person who bakes their own bread. Now it's our favorite Sunday ritual.",
-      author: 'Sarah J.',
+      quote: "I went from frozen dinners to fermenting vegetables in 8 weeks. If I can do this, anyone can.",
+      author: 'Jenna F.',
       role: 'Student',
-      initials: 'SJ',
+      initials: 'JF',
       rating: 5, // 5 stars
     },
     {
-      quote: "Finally, a course that isn't just about recipes, but about HOW to cook. I feel like I understand food for the first time.",
-      author: 'Marcus C.',
+      quote: "Paid for itself in 6 weeks. I'm saving $150/month on groceries I'm now making myself.",
+      author: 'Ashley W.',
       role: 'Student',
-      initials: 'MC',
+      initials: 'AW',
       rating: 4.5, // 4.5 stars
     },
   ]

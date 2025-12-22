@@ -9,19 +9,19 @@ export const CredibilitySection: React.FC = () => {
   const mollyImage = "/assets/molly-bravo-pantry-of-plenty-wylderspace.jpeg"
 
   const mentions = [
-    'The Knot',
-    'Yelp',
+    'Milk Street',
+    'Foody TV',
     'HarperCollins',
-    'Santa Cruz Chamber',
+    'The Knot',
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-8 md:py-12 bg-white">
       <Container>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Side - Image with Border Frame */}
-            <div className="relative h-[455px] order-2 md:order-1">
+            <div className="relative h-[455px] order-1">
               {/* Orange Border Frame */}
               <div className="absolute left-4 top-4 w-full h-full border-2 border-[#d76f30] rounded-[16px]" />
               
@@ -46,10 +46,10 @@ export const CredibilitySection: React.FC = () => {
             </div>
 
             {/* Right Side - Content */}
-            <div className="order-1 md:order-2">
+            <div className="order-2">
               {/* Heading - Playfair Display Medium, 36px, #1e3e2f */}
               <h2 
-                className="text-3xl md:text-[36px] font-medium mb-6 leading-[40px] text-[#1e3e2f]"
+                className="text-3xl md:text-[36px] font-bold mb-6 leading-[40px] text-[#1e3e2f]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Your Guide on This Path
@@ -97,7 +97,7 @@ export const CredibilitySection: React.FC = () => {
                   {mentions.map((mention, index) => (
                     <span
                       key={index}
-                      className="text-xl font-bold text-[#1e3e2f] leading-[28px]"
+                      className="text-base md:text-xl font-bold text-[#1e3e2f] leading-[28px]"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       {mention}

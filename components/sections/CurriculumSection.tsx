@@ -49,13 +49,13 @@ export const CurriculumSection: React.FC = () => {
   ]
 
   return (
-    <section className="bg-white py-16 md:py-24" id="curriculum">
+    <section className="bg-white py-12 md:py-24" id="curriculum">
       <Container>
         <div className="max-w-6xl mx-auto">
           {/* Heading - Playfair Display Medium, 36px, #1e3e2f, centered */}
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <h2
-              className="text-3xl md:text-[36px] font-medium mb-4 leading-[40px] text-[#1e3e2f]"
+              className="text-2xl md:text-[36px] font-bold mb-4 leading-[40px] text-[#1e3e2f]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               The Pantry of Plenty Curriculum
@@ -94,7 +94,7 @@ export const CurriculumSection: React.FC = () => {
                   
                   {/* Description - Lato Regular, 14px, rgba(42,42,42,0.7), leading 22.75px */}
                   <p
-                    className="text-sm leading-[22.75px] text-[rgba(42,42,42,0.7)]"
+                    className="text-base leading-[22.75px] text-[rgba(42,42,42,0.7)]"
                     style={{ fontFamily: "'Lato', sans-serif" }}
                   >
                     {module.desc}

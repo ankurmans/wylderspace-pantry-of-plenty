@@ -25,10 +25,10 @@ export const CommunitySection: React.FC = () => {
             <div>
               {/* Heading - Playfair Display Medium, 36px, #1e3e2f */}
               <h3
-                className="text-3xl md:text-[36px] font-medium mb-6 leading-[40px] text-[#1e3e2f]"
+                className="text-3xl md:text-[36px] font-bold mb-6 leading-[40px] text-[#1e3e2f]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                3 Months Inside the Questions Kitchen Society
+                3 Months Inside the Sovereign Kitchen Society
               </h3>
 
               {/* Description - Lato Regular, 18px, rgba(42,42,42,0.8) */}
@@ -36,7 +36,7 @@ export const CommunitySection: React.FC = () => {
                 className="text-lg mb-6 leading-[29.25px] text-[rgba(42,42,42,0.8)]"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
-                You won't do this alone. The Questions Kitchen Society is our private community (off social media) where women learning these skills support each other.
+                You won't do this alone. The Sovereign Kitchen Society is our private community (off social media) where women learning these skills support each other.
               </p>
 
               {/* List Items */}
@@ -87,8 +87,11 @@ export const CommunitySection: React.FC = () => {
 
               {/* Image Container */}
               <div className="absolute left-0 top-0 w-full h-full rounded-t-[160px] rounded-b-[16px] shadow-xl overflow-hidden">
-                <div className="w-full h-full bg-gray-200" />
-                {/* Placeholder for community image */}
+                <img
+                  src="/assets/pantry-of-plenty-soverighn-kitchen-society.jpeg"
+                  alt="Sovereign Kitchen Society Community"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

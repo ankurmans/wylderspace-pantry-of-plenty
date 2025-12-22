@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { getNextCohortDate } from '@/lib/utils'
 
 export interface StickyCTAProps {
   text?: string
@@ -56,13 +57,21 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
               </p>
             )}
           </div>
-          <button
-            onClick={onClick}
-            className="flex-shrink-0 w-full sm:w-auto bg-[#1e3e2f] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#162e23] transition-colors"
-            style={{ fontFamily: "'Lato', sans-serif" }}
-          >
-            {buttonText}
-          </button>
+          <div className="flex-shrink-0 flex flex-col items-center gap-1 w-full sm:w-auto">
+            <button
+              onClick={onClick}
+              className="w-full sm:w-auto bg-[#1e3e2f] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#162e23] transition-colors"
+              style={{ fontFamily: "'Lato', sans-serif" }}
+            >
+              {buttonText}
+            </button>
+            <p
+              className="text-xs sm:text-sm text-[rgba(42,42,42,0.7)] text-center"
+              style={{ fontFamily: "'Lato', sans-serif" }}
+            >
+              Next cohort begins {getNextCohortDate()}
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -20,14 +20,17 @@ export const SolutionSection: React.FC = () => {
     <section className="py-16 md:py-24 bg-white">
       <Container>
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 items-center">
             {/* Image Side - Left */}
-            <div className="relative h-[370px] md:h-[500px] order-2 md:order-1">
+            <div className="relative h-[370px] md:h-[500px] order-2 md:order-1 overflow-hidden">
               {/* Main Image Container */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="rotate-[1deg]">
-                  <div className="w-full h-full bg-gray-200 rounded-[16px] shadow-xl" />
-                  {/* Placeholder for image - replace with actual image from Figma */}
+              <div className="absolute inset-0">
+                <div className="rotate-[1deg] w-full h-full">
+                  <img
+                    src="/assets/Pantry of Plenty Cover.png"
+                    alt="Pantry of Plenty Cover"
+                    className="w-full h-full object-cover rounded-[16px] shadow-xl"
+                  />
                 </div>
               </div>
               
@@ -60,7 +63,7 @@ export const SolutionSection: React.FC = () => {
               
               {/* Main Heading */}
               <h2 
-                className="text-4xl md:text-[48px] font-medium mb-4 leading-[60px] text-[#1e3e2f]"
+                className="text-4xl md:text-[48px] font-bold mb-0 md:mb-4 leading-[48px] text-[#1e3e2f]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 There Is Another Way.
@@ -68,7 +71,7 @@ export const SolutionSection: React.FC = () => {
               
               {/* Subheading - Orange */}
               <h3 
-                className="text-4xl md:text-[48px] font-medium italic mb-6 leading-[60px] text-[#d76f30]"
+                className="text-4xl md:text-[48px] font-bold italic mb-6 leading-[48px] text-[#d76f30]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 And It's Older Than Any of Us.

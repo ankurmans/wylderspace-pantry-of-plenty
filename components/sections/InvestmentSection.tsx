@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from '@/components/ui/Button'
+import { getNextCohortDate } from '@/lib/utils'
 
 export const InvestmentSection: React.FC = () => {
   const handleEnrollment = () => {
-    // TODO: Implement actual enrollment logic
-    console.log('Enrollment button clicked!')
+    window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
   }
 
   const includedItems = [
@@ -64,11 +64,17 @@ export const InvestmentSection: React.FC = () => {
               </div>
               <Button
                 onClick={handleEnrollment}
-                className="w-full max-w-[350px] bg-[#1e3e2f] hover:bg-[#162e23] text-white px-4 py-6 rounded-[10px] text-lg font-medium mb-4 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
+                className="w-full max-w-[350px] bg-[#1e3e2f] hover:bg-[#162e23] text-white px-4 py-6 rounded-[10px] text-lg font-medium mb-2 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]"
                 style={{ fontFamily: "'Lato', sans-serif" }}
               >
                 Join Pantry of Plenty
               </Button>
+              <p
+                className="text-sm mb-4 leading-[20px] text-[rgba(42,42,42,0.7)] text-center"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
+                Next cohort begins {getNextCohortDate()}
+              </p>
               <div className="text-xs leading-[16px] text-[rgba(42,42,42,0.5)] text-center">
                 <p
                   className="mb-1"

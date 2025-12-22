@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Container } from '@/components/ui/Container'
-import { PlayCircle, MessageCircle, Video, Play } from 'lucide-react'
+import { PlayCircle, MessageCircle, Video } from 'lucide-react'
 
 export const LiveTrainingSection: React.FC = () => {
   const features = [
@@ -28,10 +28,10 @@ export const LiveTrainingSection: React.FC = () => {
       <Container>
         <div className="max-w-7xl mx-auto">
           {/* Dark green card container with rounded corners */}
-          <div className="bg-[#1e3e2f] rounded-[24px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] overflow-hidden h-[607.5px]">
+          <div className="bg-[#1e3e2f] rounded-[24px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] overflow-hidden min-h-[400px] md:h-[607.5px]">
             <div className="grid md:grid-cols-2 h-full">
               {/* Left Side - Content */}
-              <div className="pl-8 md:pl-16 pr-0 py-0 flex flex-col justify-center gap-6">
+              <div className="pl-4 md:pl-16 pr-4 md:pr-0 py-6 md:py-4 flex flex-col justify-center gap-4 md:gap-6 order-2 md:order-1">
                 {/* "Live Weekly Training" Badge */}
                 <div className="bg-[rgba(255,255,255,0.1)] h-8 rounded-full inline-flex items-center gap-2 px-4 py-0 w-fit">
                   <div className="bg-[#d76f30] opacity-[0.648] rounded-full w-2 h-2 shrink-0" />
@@ -88,20 +88,29 @@ export const LiveTrainingSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Side - Image with Play Button */}
-              <div className="relative bg-[#162e23] h-full flex items-center justify-center">
-                {/* Background Image */}
-                <div className="absolute inset-0 opacity-60">
-                  <div className="w-full h-full bg-gray-800" />
-                  {/* Placeholder for Chef Molly teaching image */}
-                </div>
-
-                {/* Play Button Overlay */}
-                <div className="relative z-10">
-                  <div className="w-24 h-24 rounded-full border-4 border-white flex items-center justify-center bg-white/10 backdrop-blur-sm">
-                    <Play className="w-12 h-12 text-white ml-1" fill="white" />
-                  </div>
-                </div>
+              {/* Right Side - YouTube Video */}
+              <div className="relative bg-[#162e23] h-[300px] md:h-full overflow-hidden order-1 md:order-2">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/Gv7Es2SvDqk?rel=0&modestbranding=1&controls=1&fs=1&iv_load_policy=3&cc_load_policy=0&playsinline=1&showinfo=0&disablekb=1"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Chef Molly Live Training"
+                  style={{ border: 'none' }}
+                />
+                {/* Overlay to hide YouTube UI elements */}
+                <div 
+                  className="absolute top-0 left-0 right-0 h-12 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to bottom, rgba(22,46,35,1) 0%, rgba(22,46,35,0.8) 50%, transparent 100%)',
+                  }}
+                />
+                <div 
+                  className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(22,46,35,1) 0%, rgba(22,46,35,0.9) 60%, transparent 100%)',
+                  }}
+                />
               </div>
             </div>
           </div>
