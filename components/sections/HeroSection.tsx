@@ -62,9 +62,9 @@ export const HeroSection: React.FC = () => {
   }, [videoUrl])
 
   return (
-    <section className="relative w-full overflow-hidden pt-16 md:pt-0">
+    <section className="relative w-full overflow-hidden pt-16 md:pt-0 bg-black">
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden" style={{ minHeight: '100vh' }}>
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         {videoEmbed ? (
           videoEmbed.platform === 'youtube' ? (
             <div 
@@ -121,17 +121,16 @@ export const HeroSection: React.FC = () => {
         className="absolute inset-0 w-full h-full"
         style={{
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.7) 100%)',
-          minHeight: '100vh',
         }}
       />
 
       {/* Text Content Overlay */}
-      <div className="relative z-10 w-full flex items-start md:items-center pt-6 md:pt-12 pb-6 md:pb-12 md:h-screen md:min-h-[800px]">
-        <div className="max-w-7xl mx-auto w-full px-4 md:px-12 pt-0 md:pt-0">
+      <div className="relative z-10 w-full flex items-start md:items-center pt-0 md:pt-12 pb-0 md:pb-12 md:h-screen md:min-h-[800px]">
+        <div className="max-w-7xl mx-auto w-full px-4 md:px-12 pt-0 md:pt-8">
             <div className="max-w-[563px]">
             {/* Main Headline - Playfair Display Medium, 60px, white */}
               <h1 
-              className="text-4xl md:text-[48px] font-black mb-3 md:mb-6 leading-tight md:leading-[48px] text-white drop-shadow-lg"
+              className="text-3xl md:text-[48px] font-black mb-3 md:mb-6 leading-tight md:leading-[48px] text-white drop-shadow-lg"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
               Your Great Grandmother Didn't Buy Bread.
@@ -249,7 +248,7 @@ export const HeroSection: React.FC = () => {
                 >
                   As Seen In
                 </p>
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
                   {AUTHORITY_MENTIONS.map((mention, index) => (
                     <span
                       key={index}

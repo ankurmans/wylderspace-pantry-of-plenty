@@ -67,7 +67,7 @@ export const ProblemSection: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           {/* Heading - Playfair Display Medium, 36px, #1e3e2f, centered */}
           <h2 
-            className="text-2xl md:text-[36px] font-bold mb-4 text-center leading-[40px] text-[#1e3e2f]"
+            className="text-3xl md:text-[36px] font-bold mb-4 text-center leading-[36px] text-[#1e3e2f]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             You Already Know Something Is Off
@@ -115,7 +115,7 @@ export const ProblemSection: React.FC = () => {
 
           {/* Closing Statement - Playfair Display Italic, 20px, #1e3e2f, centered */}
           <p 
-            className="text-lg md:text-xl font-bold italic text-center leading-[28px] text-[#1e3e2f]"
+            className="text-xl md:text-xl font-medium italic text-center leading-[28px] text-[#1e3e2f]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Deep down, you know this isn't how it's supposed to work. You just haven't been shown another way.
