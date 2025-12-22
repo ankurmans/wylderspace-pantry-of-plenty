@@ -9,7 +9,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://pantryofplenty.wyld
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Pantry of Plenty | Traditional Foods Pathway by Chef Molly Bravo',
-  description: 'Learn sourdough, fermentation, canning & traditional cooking from a HarperCollins cookbookauthor. 8-week live course + signed cookbook + community. $197 one-time.',
+  description: 'Learn sourdough, fermentation, canning & traditional cooking from a HarperCollins cookbook author. 8-week live course + signed cookbook + community. $197 one-time.',
   keywords: ['traditional cooking', 'sourdough', 'fermentation', 'pantry skills', 'home cooking', 'canning', 'preserving food', 'traditional foods', 'kitchen skills'],
   authors: [{ name: 'Molly Bravo' }],
   icons: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Pantry of Plenty | Traditional Foods Pathway by Chef Molly Bravo',
-    description: 'Learn sourdough, fermentation, canning & traditional cooking from a HarperCollins author. 8-week live course + signed cookbook + community. $197 one-time.',
+    description: 'Learn sourdough, fermentation, canning & traditional cooking from a HarperCollins cookbook author. 8-week live course + signed cookbook + community. $197 one-time.',
     type: 'website',
     siteName: 'Wylder Space',
     images: [
