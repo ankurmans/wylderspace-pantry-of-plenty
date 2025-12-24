@@ -1,10 +1,25 @@
+'use client'
+
 import React from 'react'
 import { Button } from '@/components/ui/Button'
 import { getNextCohortDate } from '@/lib/utils'
 
 export const InvestmentSection: React.FC = () => {
   const handleEnrollment = () => {
-    window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
+    // Track Meta Pixel InitiateCheckout event
+    if (window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
+        content_name: 'Pantry of Plenty',
+        content_category: 'Course',
+        value: 197.00,
+        currency: 'USD',
+      })
+    }
+    
+    // Delay redirect to ensure event fires
+    setTimeout(() => {
+      window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
+    }, 300)
   }
 
   const includedItems = [
