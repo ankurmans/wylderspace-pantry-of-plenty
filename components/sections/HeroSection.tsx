@@ -19,7 +19,20 @@ const AUTHORITY_MENTIONS = ['Milk Street', 'Foody TV', 'HarperCollins', 'The Kno
 
 export const HeroSection: React.FC = () => {
   const handleCTA = () => {
-    window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
+    // Track Meta Pixel InitiateCheckout event
+    if (window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
+        content_name: 'Pantry of Plenty',
+        content_category: 'Course',
+        value: 197.00,
+        currency: 'USD',
+      })
+    }
+    
+    // Delay redirect to ensure event fires
+    setTimeout(() => {
+      window.location.href = 'https://wylder-space.thinkific.com/order?ct=7654480e-98df-488c-a8e1-37449e70cfc8'
+    }, 300)
   }
 
   // Video URL - Set your Wistia or YouTube link here or via environment variable
