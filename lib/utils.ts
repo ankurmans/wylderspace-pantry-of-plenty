@@ -6,10 +6,16 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /**
- * Calculates the Monday that is 2 weeks from today
- * @returns Formatted date string (e.g., "January 15, 2025")
+ * Returns the next cohort start date
+ * @returns Formatted date string (e.g., "January 5, 2026")
  */
 export function getNextCohortDate(): string {
+  // Fixed date for now - January 5, 2026
+  return 'January 5, 2026'
+
+  // TODO: Uncomment below to re-enable dynamic date calculation
+  // Calculates the Monday that is 2 weeks from today
+  /*
   const today = new Date()
   // Add 14 days (2 weeks)
   const twoWeeksFromNow = new Date(today)
@@ -34,5 +40,6 @@ export function getNextCohortDate(): string {
     day: 'numeric', 
     year: 'numeric' 
   })
+  */
 }
 
