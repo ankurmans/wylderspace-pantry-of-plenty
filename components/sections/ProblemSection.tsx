@@ -115,7 +115,7 @@ export const ProblemSection: React.FC = () => {
 
           {/* Closing Statement - Playfair Display Italic, 20px, #1e3e2f, centered */}
           <p 
-            className="text-xl md:text-xl font-medium italic text-center leading-[28px] text-[#1e3e2f]"
+            className="text-2xl md:text-xl font-medium italic text-center leading-[28px] text-[#1e3e2f]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Deep down, you know this isn't how it's supposed to work. You just haven't been shown another way.

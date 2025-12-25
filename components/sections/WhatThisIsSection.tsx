@@ -28,9 +28,9 @@ export const WhatThisIsSection: React.FC = () => {
 
   const benefits = [
     'Cuts your grocery bill by making staples yourself instead of buying them',
-    'Improves your family\'s health with nutrient-dense, traditionally prepared foods',
+    'Improves your family\'s health with nutrient-rich, traditionally prepared foods',
     'Reduces waste by using what you have and preserving what you grow or buy',
-    'Gives you confidence in the kitchen — real confidence, not just following instructions',
+    'Gain real confidence in the kitchen — not just following instructions',
     'Creates calm because tomorrow\'s meals are already in motion',
   ]
 
@@ -106,7 +106,9 @@ export const WhatThisIsSection: React.FC = () => {
               className="text-3xl font-medium italic leading-[32px] text-[#d76f30]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              From consumer to creator. From dependent to capable. From stressed to steady.
+              From consumer to creator.<br />
+              From dependent to capable.<br />
+              From stressed to steady.
             </p>
           </div>
 

@@ -42,7 +42,7 @@ export const SolutionSection: React.FC = () => {
             {/* Content Side - Right */}
             <div className="order-1 md:order-2">
               {/* "The Ancient Way" Label */}
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-2">
                 {iconError ? (
                   <div className="w-5 h-5 text-[#d76f30]">🌾</div>
                 ) : (

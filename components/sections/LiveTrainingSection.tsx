@@ -7,19 +7,25 @@ import { PlayCircle, MessageCircle, Video } from 'lucide-react'
 export const LiveTrainingSection: React.FC = () => {
   const features = [
     {
-      title: 'Weekly Livestream Cooking Class',
+      title: 'Livestream Cooking Class',
+      day: 'Every Monday',
+      duration: '30min-1h',
       desc: 'Cook alongside me as I walk you through techniques, answer questions on the spot, and troubleshoot in real time.',
       icon: PlayCircle,
     },
     {
-      title: 'Weekly Q&A Session',
-      desc: 'Bring your questions — about recipes, ingredients, technique, or how to adapt this to your life.',
-      icon: MessageCircle,
-    },
-    {
-      title: 'Weekly Cooking Demo (10–15 min)',
+      title: 'Weekly Cooking Demo',
+      day: 'Every Wednesday',
+      duration: '15 min',
       desc: 'Short, focused demonstrations on specific skills — perfect for fitting learning into a busy week.',
       icon: Video,
+    },
+    {
+      title: 'Weekly Q&A Session',
+      day: 'Every Friday',
+      duration: '30min-1h',
+      desc: 'Bring your questions — about recipes, ingredients, technique, or how to adapt this to your life.',
+      icon: MessageCircle,
     },
   ]
 
@@ -51,12 +57,20 @@ export const LiveTrainingSection: React.FC = () => {
                   With Chef Molly
                 </h3>
 
+                {/* Authority Credential - Small caps */}
+                <p
+                  className="text-xs uppercase tracking-wider leading-[16px] text-[rgba(255,255,255,0.5)] -mt-4 mb-0"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
+                  HarperCollins author of the bestseller <br /> 'The Essential Canning Cookbook'
+                </p>
+
                 {/* Description - Lato Regular, 18px, rgba(255,255,255,0.9) */}
                 <p
                   className="text-lg leading-[29.25px] text-[rgba(255,255,255,0.9)]"
                   style={{ fontFamily: "'Lato', sans-serif" }}
                 >
-                  This isn't a watch-and-forget video library. You'll learn with me, in real time.
+                  This isn't a passive, watch-and-forget course. You'll learn with me, in real time, 3x a week.
                 </p>
 
                 {/* Feature List */}
@@ -75,6 +89,12 @@ export const LiveTrainingSection: React.FC = () => {
                           >
                             {feature.title}
                           </h4>
+                          <p
+                            className="text-sm font-semibold leading-[20px] text-[#d76f30]"
+                            style={{ fontFamily: "'Lato', sans-serif" }}
+                          >
+                            {feature.day} • {feature.duration}
+                          </p>
                           <p
                             className="text-sm leading-[20px] text-[rgba(255,255,255,0.7)]"
                             style={{ fontFamily: "'Lato', sans-serif" }}

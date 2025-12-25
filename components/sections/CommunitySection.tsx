@@ -58,7 +58,7 @@ export const CommunitySection: React.FC = () => {
                       )}
                     </div>
                     <span
-                      className="text-base font-medium leading-[24px] text-[rgba(42,42,42,0.9)]"
+                      className="text-base md:text-lg font-medium leading-[24px] text-[rgba(42,42,42,0.9)]"
                       style={{ fontFamily: "'Lato', sans-serif" }}
                     >
                       {item}
@@ -69,7 +69,7 @@ export const CommunitySection: React.FC = () => {
 
               {/* Closing Statement - Playfair Display Italic, 20px, #1e3e2f */}
               <p
-                className="text-xl italic leading-[28px] text-[#1e3e2f]"
+                className="text-2xl italic leading-[28px] text-[#1e3e2f]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 This is where the transformation sticks — because you're surrounded by people doing it with you.

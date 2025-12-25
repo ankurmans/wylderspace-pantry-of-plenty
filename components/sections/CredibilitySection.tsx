@@ -60,7 +60,15 @@ export const CredibilitySection: React.FC = () => {
                 className="text-xl font-medium italic mb-6 leading-[28px] text-[#d76f30]"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                I'm Molly Bravo — chef, cookbook author, and founder of Wylder Space.
+                I'm Molly Bravo — chef, cookbook author, and founder of{' '}
+                <a 
+                  href="https://wylderspace.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="underline hover:no-underline transition-all"
+                >
+                  Wylder Space
+                </a>.
               </h3>
               
               {/* Paragraphs */}
@@ -69,7 +77,7 @@ export const CredibilitySection: React.FC = () => {
                   className="text-base leading-[24px] text-[rgba(42,42,42,0.8)]"
                   style={{ fontFamily: "'Lato', sans-serif" }}
                 >
-                  I've spent nearly 20 years in professional kitchens — from private chef work to catering weddings and corporate events for companies like Google. I've cooked plated dinners for 120+ guests, built a zero-waste kitchen, and run a farm-to-table catering company in the Santa Cruz Mountains.
+                  I've spent 20 years in professional kitchens — from private chef work to catering weddings and corporate events for companies like Google. I've cooked plated dinners for 200+ guests, built a zero-waste kitchen, and run a farm-to-table catering company in the Santa Cruz Mountains.
                 </p>
                 <p 
                   className="text-base leading-[24px] text-[rgba(42,42,42,0.8)]"

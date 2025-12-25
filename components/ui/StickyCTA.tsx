@@ -96,7 +96,7 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
           <div className="flex-shrink-0 w-full sm:w-auto">
             <button
               onClick={onClick}
-              className="w-full sm:w-auto bg-[#1e3e2f] text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-[#162e23] transition-colors"
+              className="w-full sm:w-auto bg-[#1e3e2f] text-white px-6 py-3 rounded-full text-base font-medium hover:bg-[#162e23] transition-colors"
               style={{ fontFamily: "'Lato', sans-serif" }}
             >
               {buttonText}
