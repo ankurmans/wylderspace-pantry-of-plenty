@@ -67,7 +67,7 @@ export const ProblemSection: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           {/* Heading - Playfair Display Medium, 36px, #1e3e2f, centered */}
           <h2 
-            className="text-3xl md:text-[36px] font-bold mb-4 text-center leading-[36px] text-[#1e3e2f]"
+            className="text-2xl md:text-[36px] font-bold mb-4 text-center leading-[36px] text-[#1e3e2f]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             You Already Know Something Is Off
@@ -78,7 +78,7 @@ export const ProblemSection: React.FC = () => {
             className="text-lg mb-8 text-center leading-[29.25px] text-[rgba(42,42,42,0.8)]"
             style={{ fontFamily: "'Lato', sans-serif" }}
           >
-            You feel it every time you check out at the grocery store. Every time you scan an ingredient list you can't pronounce. The system is expensive — and you're paying for it twice. Once at the register. Again with your health.
+            You feel it every time at the grocery store when you scan an ingredient list you can't pronounce. The system is expensive — and you're paying for it twice. Once at the register. Again with your health.
           </p>
 
           {/* Problem Cards */}

@@ -154,7 +154,7 @@ export const HeroSection: React.FC = () => {
               className="text-xl md:text-2xl mb-3 md:mb-6 leading-snug md:leading-[29.25px] italic text-white/90 drop-shadow-md"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                She made it on the counter. With three ingredients. And it fed her family for pennies.
+                She made it on the counter. With 3 ingredients. And it fed her family for pennies.
               </p>
               
             {/* Body Text - Lato Regular, 18px, white with opacity */}

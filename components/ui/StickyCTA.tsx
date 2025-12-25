@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { getNextCohortDate } from '@/lib/utils'
 
 export interface StickyCTAProps {
@@ -15,33 +15,36 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
   onClick,
 }) => {
   const [isVisible, setIsVisible] = useState(false)
+  const hasBeenShown = useRef(false)
 
   useEffect(() => {
-    const curriculumSection = document.getElementById('curriculum')
-    if (!curriculumSection) return
+    const whatThisIsSection = document.getElementById('what-this-is')
+    if (!whatThisIsSection) return
 
     const updateVisibility = () => {
-      const rect = curriculumSection.getBoundingClientRect()
-      
-      // Show CTA if:
-      // 1. Section is in viewport (top is above bottom of viewport and bottom is below top of viewport)
-      // 2. OR we've scrolled past the section (top of section is above viewport)
-      // Hide CTA if section hasn't been reached yet (top of section is below viewport)
-      const isSectionInView = rect.top < window.innerHeight && rect.bottom > 0
-      const hasScrolledPastSection = rect.top < 0
+      // Once visible, keep it visible (don't check again)
+      if (hasBeenShown.current) return
 
-      setIsVisible(isSectionInView || hasScrolledPastSection)
+      const rect = whatThisIsSection.getBoundingClientRect()
+      
+      // Show CTA once the section enters viewport (top of section is visible or has been scrolled past)
+      // Once shown, it stays visible until end of page
+      const hasReachedSection = rect.top <= window.innerHeight
+
+      if (hasReachedSection) {
+        setIsVisible(true)
+        hasBeenShown.current = true
+      }
     }
 
-    // Use IntersectionObserver to detect when section enters/exits viewport
+    // Use IntersectionObserver to detect when section enters viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !hasBeenShown.current) {
+            // Once section is in view, show CTA and keep it visible
             setIsVisible(true)
-          } else {
-            // When section exits viewport, check scroll position to determine visibility
-            updateVisibility()
+            hasBeenShown.current = true
           }
         })
       },
@@ -51,9 +54,9 @@ export const StickyCTA: React.FC<StickyCTAProps> = ({
       }
     )
 
-    observer.observe(curriculumSection)
+    observer.observe(whatThisIsSection)
 
-    // Listen to scroll events to continuously update visibility
+    // Listen to scroll events to check if section has been reached
     window.addEventListener('scroll', updateVisibility, { passive: true })
     
     // Initial check

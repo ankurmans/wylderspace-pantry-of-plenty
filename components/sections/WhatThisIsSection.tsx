@@ -37,7 +37,7 @@ export const WhatThisIsSection: React.FC = () => {
   const [iconError, setIconError] = useState(false)
 
   return (
-    <section className="py-16 md:py-24 bg-[#1e3e2f]">
+    <section id="what-this-is" className="py-16 md:py-24 bg-[#1e3e2f]">
       <Container>
         <div className="max-w-5xl mx-auto">
           {/* Heading - Playfair Display Medium, 36px, white, centered */}
