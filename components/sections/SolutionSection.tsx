@@ -27,7 +27,7 @@ export const SolutionSection: React.FC = () => {
               <div className="absolute inset-0">
                 <div className="rotate-[1deg] w-full h-full">
                   <img
-                    src="/assets/Pantry of Plenty Cover.png"
+                    src="/assets/Pantry-of-plenty-square 1.webp"
                     alt="Pantry of Plenty Cover"
                     className="w-full h-full object-cover rounded-[16px] shadow-xl"
                   />
